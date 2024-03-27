@@ -5,9 +5,9 @@ import Canvas from "./canvas";
 function App() {
   return (
     <>
-      <Home />
       <Canvas />
       <Customizer />
+      <Home />
     </>
   );
 }
