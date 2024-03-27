@@ -33,6 +33,7 @@ function Home({}: Props) {
               <CustomButton
                 label="Get Started"
                 onClick={() => setIntro(false)}
+                color={"bg-gradient-to-r from-sky-400 to-pink-400"}
               />
             </motion.div>
           </motion.div>
