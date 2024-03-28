@@ -4,43 +4,12 @@ import { AnimatePresence } from "framer-motion";
 import { slideAnimation, fadeAnimation } from "../animations/motion";
 import { useContext } from "react";
 import MainContext from "../contexts/mainContext";
+import { editTabs, filterTabs } from "../config/tabs";
 
 type Props = {};
 
 export default function Customizer({}: Props) {
   const { intro, setIntro } = useContext(MainContext);
-
-  const EditTabs = [
-    {
-      id: "1",
-      name: "Color",
-      icon: "",
-      component: "",
-    },
-    {
-      id: "2",
-      name: "file",
-      icon: "",
-      component: "",
-    },
-    {
-      id: "3",
-      name: "ai",
-      icon: "",
-      component: "",
-    },
-  ];
-
-  const filterTabs = [
-    {
-      id: "1",
-      name: "normal",
-      icon: "",
-      component: "",
-    },
-    { id: "2", name: "custom", icon: "", component: "" },
-    { id: "3", name: "download", icon: "", component: "" },
-  ];
 
   return (
     <AnimatePresence>
@@ -52,7 +21,7 @@ export default function Customizer({}: Props) {
           >
             <div className="flex items-center min-h-screen bg-slate-700 ">
               <div className="editor-tab">
-                {EditTabs.map((tab) => (
+                {editTabs.map((tab) => (
                   <div key={tab.id} className="tab">
                     <p>{tab.name}</p>
                   </div>
