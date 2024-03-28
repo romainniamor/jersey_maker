@@ -1,20 +1,21 @@
 import CustomButton from "../components/reusableUi/CustomButton";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import {
   slideAnimation,
   fadeAnimation,
   headTextAnimation,
   headContentAnimation,
   headContainerAnimation,
-  popAnimation,
 } from "../animations/motion";
-import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+
+import { useContext } from "react";
+import MainContext from "../contexts/mainContext";
 
 type Props = {};
 
 function Home({}: Props) {
-  const [intro, setIntro] = useState(true);
+  const { intro, setIntro } = useContext(MainContext);
   return (
     <AnimatePresence>
       {intro && (
