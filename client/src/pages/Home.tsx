@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import {
   slideAnimation,
-  fadeAnimation,
   headTextAnimation,
   headContentAnimation,
   headContainerAnimation,
@@ -19,13 +18,16 @@ function Home({}: Props) {
   return (
     <AnimatePresence>
       {intro && (
-        <motion.div className="" {...slideAnimation("left")}>
+        <motion.div
+          className="h-full w-full bg-slate-600 p-5"
+          {...slideAnimation("left")}
+        >
           <motion.div className="" {...headContainerAnimation}>
             <motion.div className="" {...headTextAnimation}>
-              <h1>Let's create</h1>
+              <h1 className="text-8xl mb-9 ">Let's create</h1>
             </motion.div>
             <motion.div className="" {...headContentAnimation}>
-              <p>
+              <p className="text-gray-800 min-w-2/5 max-w-lg mb-4">
                 Fan of Captain Tsubasa!? Create your own shirt style for your
                 favorite team. <strong>Unleash your imagination</strong> and
                 define your own style.
