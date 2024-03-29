@@ -8,7 +8,7 @@ export default function Shirt() {
   return (
     <group>
       <mesh
-        castShadow //shadow behin
+        castShadow //shadow behind
         geometry={nodes.T_Shirt_male.geometry}
         material={materials.lambert1}
         material-roughness={1}
