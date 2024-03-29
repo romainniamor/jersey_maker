@@ -1,9 +1,13 @@
 import { easing } from "maath";
-import React from "react";
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
 export default function Shirt() {
   const { nodes, materials } = useGLTF("/shirt.glb");
+
+  useFrame((state, delta) => {
+    easing.dampC(materials.lambert1.color, state.color, 0.25, delta);
+  });
 
   return (
     <group>
