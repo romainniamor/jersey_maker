@@ -20,10 +20,10 @@ export default function Customizer({}: Props) {
             {...slideAnimation("left")}
           >
             <div className="flex items-center min-h-screen ">
-              <div className="editor-tab">
+              <div className="glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4">
                 {editTabs.map((tab) => (
-                  <div key={tab.id} className="tab">
-                    <p>{tab.name}</p>
+                  <div key={tab.name} className="tab">
+                    <img src={tab.icon} alt={tab.name} className="" />
                   </div>
                 ))}
               </div>

@@ -1,21 +1,22 @@
+import ai from "../assets/icons/ai.png";
+import file from "../assets/icons/file.png";
+import color from "../assets/icons/color.png";
+
 export const editTabs = [
   {
     id: "1",
     name: "Color",
-    icon: "",
-    component: "",
+    icon: color,
   },
   {
     id: "2",
     name: "file",
-    icon: "",
-    component: "",
+    icon: file,
   },
   {
     id: "3",
     name: "ai",
-    icon: "",
-    component: "",
+    icon: ai,
   },
 ];
 
