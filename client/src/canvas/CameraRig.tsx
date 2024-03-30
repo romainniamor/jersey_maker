@@ -27,7 +27,7 @@ export default function CameraRig({ children }) {
     // set the model rotation smoothly
     easing.dampE(
       group.current.rotation,
-      [state.pointer.y / 10, -state.pointer.x / 5, 0], // rotate the model based on the mouse position
+      [state.pointer.y / 8, -state.pointer.x / 2, 0], // rotate the model based on the mouse position
       0.25,
       delta
     );
