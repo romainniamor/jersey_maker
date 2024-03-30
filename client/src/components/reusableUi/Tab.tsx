@@ -1,9 +1,16 @@
 type TabProps = {};
 
-export default function Tab({ tab, onClick, isActiveTab }: TabProps) {
+export default function Tab({
+  tab,
+  onClick,
+  isFilterTab,
+  isActiveTab,
+}: TabProps) {
   return (
     <div
-      className="w-9 h-9 flex justify-center items-center cursor-pointer select-none"
+      className={`w-9 h-9 flex justify-center items-center cursor-pointer select-none ${
+        isFilterTab ? "rounded-full glassmorphism" : ""
+      } `}
       onClick={onClick}
     >
       <img

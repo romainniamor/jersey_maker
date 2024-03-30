@@ -27,7 +27,7 @@ export default function Customizer({}: Props) {
                     key={tab.name}
                     tab={tab}
                     onClick={() => alert(`click de tab ${tab.name}`)}
-                    isActiveTab={true}
+                    isActiveTab={false}
                   />
                 ))}
               </div>
@@ -50,9 +50,13 @@ export default function Customizer({}: Props) {
             {...slideAnimation("up")}
           >
             {filterTabs.map((tab) => (
-              <div key={tab.id} className="tab">
-                <p>{tab.name}</p>
-              </div>
+              <Tab
+                key={tab.name}
+                tab={tab}
+                onClick={() => alert(`click de tab ${tab.name}`)}
+                isActiveTab={false}
+                isFilterTab={true}
+              />
             ))}
           </motion.div>
         </>
