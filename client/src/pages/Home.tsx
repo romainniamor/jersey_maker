@@ -19,7 +19,7 @@ function Home({}: Props) {
     <AnimatePresence>
       {intro && (
         <motion.div
-          className="h-full w-full bg-slate-600 p-5"
+          className="w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-7 absolute z-10"
           {...slideAnimation("left")}
         >
           <motion.div className="" {...headContainerAnimation}>

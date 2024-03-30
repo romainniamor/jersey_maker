@@ -19,7 +19,7 @@ export default function Customizer({}: Props) {
             className="absolute z-10 top-0 left-2"
             {...slideAnimation("left")}
           >
-            <div className="flex items-center min-h-screen bg-slate-700 ">
+            <div className="flex items-center min-h-screen ">
               <div className="editor-tab">
                 {editTabs.map((tab) => (
                   <div key={tab.id} className="tab">
@@ -42,7 +42,7 @@ export default function Customizer({}: Props) {
           </motion.div>
 
           <motion.div
-            className="absolute z-10 bottom-2 right-0 left-0 w-full flex justify-center items-center  gap-4 bg-slate-300"
+            className="absolute z-10 bottom-2 right-0 left-0 w-full flex justify-center items-center  gap-4 "
             {...slideAnimation("up")}
           >
             {filterTabs.map((tab) => (
