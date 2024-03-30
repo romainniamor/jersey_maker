@@ -6,11 +6,11 @@ import { useState } from "react";
 
 function App() {
   const [intro, setIntro] = useState(true);
-  const [color, setColor] = useState("#FDE100");
+  const [color, setColor] = useState("#2e088f");
   const [isLogoTexture, setIsLogoTexture] = useState(true);
   const [isFullTexture, setIsFullTexture] = useState(false);
   const [isFullDecal, setIsFullDecal] = useState(false);
-  const [logoDecal, setLogoDecal] = useState("/teams/7.png");
+  const [logoDecal, setLogoDecal] = useState("/teams/meiwa.png");
   const [fullDecal, setFullDecal] = useState("/teams/1.png");
 
   const mainContextValue = {

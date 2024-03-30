@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import Tab from "../components/reusableUi/Tab";
 import { getEditTabsConfig } from "../config/getEditTabsConfig";
+import ColorPicker from "../components/pickers/ColorPicker";
 
 type Props = {};
 
@@ -37,6 +38,7 @@ export default function Customizer({}: Props) {
     <AnimatePresence>
       {!intro && (
         <>
+          <ColorPicker />
           <motion.div
             className="absolute z-10 top-0 left-2"
             {...slideAnimation("left")}
