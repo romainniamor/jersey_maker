@@ -4,13 +4,34 @@ import { AnimatePresence } from "framer-motion";
 import { slideAnimation, fadeAnimation } from "../animations/motion";
 import { useContext } from "react";
 import MainContext from "../contexts/mainContext";
-import { editTabs, filterTabs } from "../config/tabs";
+import { useState } from "react";
+
 import Tab from "../components/reusableUi/Tab";
+import { getEditTabsConfig } from "../config/getEditTabsConfig";
 
 type Props = {};
 
 export default function Customizer({}: Props) {
   const { intro, setIntro } = useContext(MainContext);
+
+  const [currentTabSelected, setCurrentTabSelected] = useState(null);
+  const [file, setFile] = useState("");
+  const [prompt, setPrompt] = useState("");
+  const [generatingImg, setGeneratingImg] = useState(false);
+
+  const [activeEditorTab, setActiveEditorTab] = useState("");
+  const [activeFilterTab, setActiveFilterTab] = useState({
+    logoShirt: true,
+    stylishShirt: false,
+  });
+
+  //comportements
+  const selectTab = (tabselected) => {
+    setCurrentTabSelected(tabselected);
+    alert(`click de tab ${tabselected}`);
+  };
+
+  const editTabs = getEditTabsConfig(currentTabSelected);
 
   return (
     <AnimatePresence>
@@ -24,10 +45,10 @@ export default function Customizer({}: Props) {
               <div className="glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-3">
                 {editTabs.map((tab) => (
                   <Tab
-                    key={tab.name}
+                    key={tab.index}
                     tab={tab}
-                    onClick={() => alert(`click de tab ${tab.name}`)}
-                    isActiveTab={false}
+                    onClick={() => selectTab(tab.index)}
+                    isActiveTab={tab.className === "active" ? true : false}
                   />
                 ))}
               </div>
@@ -49,7 +70,7 @@ export default function Customizer({}: Props) {
             className="absolute z-10 bottom-2 right-0 left-0 w-full flex justify-center items-center  gap-4 "
             {...slideAnimation("up")}
           >
-            {filterTabs.map((tab) => (
+            {/* {filterTabs.map((tab) => (
               <Tab
                 key={tab.name}
                 tab={tab}
@@ -57,7 +78,7 @@ export default function Customizer({}: Props) {
                 isActiveTab={false}
                 isFilterTab={true}
               />
-            ))}
+            ))} */}
           </motion.div>
         </>
       )}
