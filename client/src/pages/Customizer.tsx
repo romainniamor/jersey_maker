@@ -5,6 +5,7 @@ import { slideAnimation, fadeAnimation } from "../animations/motion";
 import { useContext } from "react";
 import MainContext from "../contexts/mainContext";
 import { editTabs, filterTabs } from "../config/tabs";
+import Tab from "../components/reusableUi/Tab";
 
 type Props = {};
 
@@ -20,11 +21,14 @@ export default function Customizer({}: Props) {
             {...slideAnimation("left")}
           >
             <div className="flex items-center min-h-screen ">
-              <div className="glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4">
+              <div className="glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-3">
                 {editTabs.map((tab) => (
-                  <div key={tab.name} className="tab">
-                    <img src={tab.icon} alt={tab.name} className="" />
-                  </div>
+                  <Tab
+                    key={tab.name}
+                    tab={tab}
+                    onClick={() => alert(`click de tab ${tab.name}`)}
+                    isActiveTab={true}
+                  />
                 ))}
               </div>
             </div>
