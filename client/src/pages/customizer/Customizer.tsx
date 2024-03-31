@@ -1,21 +1,22 @@
-import CustomButton from "../components/reusableUi/CustomButton";
+import CustomButton from "../../components/reusableUi/CustomButton";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { slideAnimation, fadeAnimation } from "../animations/motion";
+import { slideAnimation, fadeAnimation } from "../../animations/motion";
 import { useContext } from "react";
-import MainContext from "../contexts/mainContext";
+import MainContext from "../../contexts/mainContext";
 import { useState } from "react";
 
-import Tab from "../components/reusableUi/Tab";
-import { getEditTabsConfig } from "../config/getEditTabsConfig";
-import ColorPicker from "../components/pickers/ColorPicker";
+import Tab from "../../components/reusableUi/Tab";
+import { getEditTabsConfig } from "../../config/getEditTabsConfig";
+
+import EditPanel from "./EditPanel";
 
 type Props = {};
 
 export default function Customizer({}: Props) {
-  const { intro, setIntro } = useContext(MainContext);
+  const { intro, setIntro, currentTabSelected, setCurrentTabSelected } =
+    useContext(MainContext);
 
-  const [currentTabSelected, setCurrentTabSelected] = useState(null);
   const [file, setFile] = useState("");
   const [prompt, setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
@@ -27,9 +28,14 @@ export default function Customizer({}: Props) {
   });
 
   //comportements
+  const returnToHome = async () => {
+    await setCurrentTabSelected(null);
+    setIntro(true);
+  };
+
   const selectTab = (tabselected) => {
+    if (tabselected === currentTabSelected) return setCurrentTabSelected(null);
     setCurrentTabSelected(tabselected);
-    alert(`click de tab ${tabselected}`);
   };
 
   const editTabs = getEditTabsConfig(currentTabSelected);
@@ -38,7 +44,6 @@ export default function Customizer({}: Props) {
     <AnimatePresence>
       {!intro && (
         <>
-          <ColorPicker />
           <motion.div
             className="absolute z-10 top-0 left-2"
             {...slideAnimation("left")}
@@ -53,6 +58,7 @@ export default function Customizer({}: Props) {
                     isActiveTab={tab.className === "active" ? true : false}
                   />
                 ))}
+                {currentTabSelected && <EditPanel />}
               </div>
             </div>
           </motion.div>
@@ -63,7 +69,7 @@ export default function Customizer({}: Props) {
           >
             <CustomButton
               label="Go Back"
-              onClick={() => setIntro(!intro)}
+              onClick={returnToHome}
               color={"bg-gradient-to-r from-sky-400 to-pink-400"}
             />
           </motion.div>

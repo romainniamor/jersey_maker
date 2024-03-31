@@ -1,18 +1,21 @@
-import React from "react";
 import { SketchPicker } from "react-color";
 import { useContext } from "react";
 import MainContext from "../../contexts/mainContext";
 
 export default function ColorPicker() {
   const { color, setColor } = useContext(MainContext);
+
+  const handleChange = (color) => {
+    setColor(color.hex);
+  };
   return (
-    <div className="absolute top-0 left-9 bg-slate-800">
-      <p>dfqbf,qsbf</p>
-      <SketchPicker
-        color={color}
-        disableAlpha
-        onChange={(color) => setColor(color.hex)}
-      />
-    </div>
+    <SketchPicker
+      className="h-52 overflow-hidden rounded-lg shadow-lg"
+      color={color}
+      width={250}
+      onChange={handleChange}
+      disableAlpha
+      presetColors={[]}
+    />
   );
 }
