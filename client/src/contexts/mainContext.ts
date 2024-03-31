@@ -8,6 +8,9 @@ const MainContext = createContext({
   color: string,
   setColor: () => {},
 
+  currentTabSelected: "",
+  setCurrentTabSelected: () => {},
+
   isLogoTexture: true,
   setIsLogoTexture: () => {},
 

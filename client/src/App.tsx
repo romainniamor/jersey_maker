@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import Customizer from "./pages/Customizer";
+import Customizer from "./pages/customizer/Customizer";
 import Canvas from "./canvas";
 import MainContext from "./contexts/mainContext";
 import { useState } from "react";
@@ -12,6 +12,7 @@ function App() {
   const [isFullDecal, setIsFullDecal] = useState(false);
   const [logoDecal, setLogoDecal] = useState("/teams/meiwa.png");
   const [fullDecal, setFullDecal] = useState("/teams/1.png");
+  const [currentTabSelected, setCurrentTabSelected] = useState(null);
 
   const mainContextValue = {
     intro,
@@ -28,6 +29,8 @@ function App() {
     setLogoDecal,
     fullDecal,
     setFullDecal,
+    currentTabSelected,
+    setCurrentTabSelected,
   };
 
   return (
