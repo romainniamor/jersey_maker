@@ -1,13 +1,18 @@
 import { useContext } from "react";
 import ColorPicker from "../../components/pickers/ColorPicker";
 import MainContext from "../../contexts/mainContext";
+import AiPicker from "../../components/pickers/AiPicker";
+import BrandPicker from "../../components/pickers/BrandPicker";
+import LogoPicker from "../../components/pickers/LogoPicker";
 
 export default function EditPanel() {
-  const { currentTabSelected, setCurrentTabSelected } = useContext(MainContext);
+  const { currentTabSelected } = useContext(MainContext);
   return (
-    <div className="absolute left-full ml-3 p-5">
+    <div className="absolute left-full ml-3 p-2 glassmorphism rounded-lg">
       {currentTabSelected === "color" && <ColorPicker />}
-      {/* {currentTabSelected === "edit" && <EditForm />} */}
+      {currentTabSelected === "ai" && <AiPicker />}
+      {currentTabSelected === "logo" && <LogoPicker />}
+      {currentTabSelected === "brand" && <BrandPicker />}
     </div>
   );
 }

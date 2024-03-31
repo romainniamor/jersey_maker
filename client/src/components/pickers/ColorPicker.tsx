@@ -10,7 +10,7 @@ export default function ColorPicker() {
   };
   return (
     <SketchPicker
-      className="h-52 overflow-hidden rounded-lg shadow-lg"
+      className="h-52 overflow-hidden"
       color={color}
       width={250}
       onChange={handleChange}
