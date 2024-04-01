@@ -3,7 +3,7 @@ import logo from "../assets/icons/logo.png";
 import color from "../assets/icons/color.png";
 import brand from "../assets/icons/brand.png";
 
-export const getEditTabsConfig = (currentTabSelected) => [
+export const getEditTabsConfig = (currentTabSelected: string) => [
   {
     index: "color",
     label: "colorpicker",

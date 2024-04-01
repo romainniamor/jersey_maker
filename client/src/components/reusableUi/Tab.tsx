@@ -1,4 +1,11 @@
-type TabProps = {};
+import { tabSelectedType } from "../../types/types";
+
+type TabProps = {
+  tab: tabSelectedType;
+  onClick: () => void;
+  isFilterTab?: boolean;
+  isActiveTab: boolean;
+};
 
 export default function Tab({
   tab,
@@ -15,7 +22,7 @@ export default function Tab({
     >
       <img
         src={tab.icon}
-        alt={tab.name}
+        alt={tab.index}
         className={`transition-all ease-in-out duration-300 ${
           isActiveTab ? "w-10 h-10" : "w-8 h-8 opacity-80 "
         }`}

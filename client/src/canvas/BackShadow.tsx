@@ -1,17 +1,14 @@
 import { AccumulativeShadows, RandomizedLight } from "@react-three/drei";
-import { useRef } from "react";
 import { useContext } from "react";
 import MainContext from "../contexts/mainContext";
 
 export default function BackShadow() {
-  const shadows = useRef();
   const { color } = useContext(MainContext);
   return (
     <AccumulativeShadows
       temporal
       frames={100}
       color={color}
-      // colorBlend={20}
       toneMapped={true}
       opacity={0.9}
       scale={5}

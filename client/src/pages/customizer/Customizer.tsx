@@ -4,28 +4,25 @@ import { AnimatePresence } from "framer-motion";
 import { slideAnimation, fadeAnimation } from "../../animations/motion";
 import { useContext } from "react";
 import MainContext from "../../contexts/mainContext";
-import { useState } from "react";
 
 import Tab from "../../components/reusableUi/Tab";
 import { getEditTabsConfig } from "../../config/getEditTabsConfig";
 
 import EditPanel from "./EditPanel";
 
-type Props = {};
-
-export default function Customizer({}: Props) {
+export default function Customizer() {
   const { intro, setIntro, currentTabSelected, setCurrentTabSelected } =
     useContext(MainContext);
 
-  const [file, setFile] = useState("");
-  const [prompt, setPrompt] = useState("");
-  const [generatingImg, setGeneratingImg] = useState(false);
+  // const [file, setFile] = useState("");
+  // const [prompt, setPrompt] = useState("");
+  // const [generatingImg, setGeneratingImg] = useState(false);
 
-  const [activeEditorTab, setActiveEditorTab] = useState("");
-  const [activeFilterTab, setActiveFilterTab] = useState({
-    logoShirt: true,
-    stylishShirt: false,
-  });
+  // const [activeEditorTab, setActiveEditorTab] = useState("");
+  // const [activeFilterTab, setActiveFilterTab] = useState({
+  //   logoShirt: true,
+  //   stylishShirt: false,
+  // });
 
   //comportements
   const returnToHome = async () => {
@@ -33,12 +30,14 @@ export default function Customizer({}: Props) {
     setIntro(true);
   };
 
-  const selectTab = (tabselected) => {
+  const selectTab = (tabselected: string) => {
     if (tabselected === currentTabSelected) return setCurrentTabSelected(null);
     setCurrentTabSelected(tabselected);
   };
 
-  const editTabs = getEditTabsConfig(currentTabSelected);
+  const editTabs = currentTabSelected
+    ? getEditTabsConfig(currentTabSelected)
+    : null;
 
   return (
     <AnimatePresence>

@@ -3,8 +3,6 @@ import { Environment, Center } from "@react-three/drei";
 import Shirt from "./Shirt";
 import BackShadow from "./BackShadow";
 import CameraRig from "./CameraRig";
-import { useContext } from "react";
-import MainContext from "../contexts/mainContext";
 
 export default function CanvasModel() {
   return (

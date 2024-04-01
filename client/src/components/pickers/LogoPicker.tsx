@@ -11,10 +11,9 @@ export default function LogoPicker() {
 
   //comportements
 
-  const handleClick = (teamId: number) => {
+  const handleClick = (teamId: string) => {
     const selectTeam = findInArray(SOCCER_TEAMS, teamId);
-
-    setLogoDecal(selectTeam.imageSource);
+    selectTeam && setLogoDecal(selectTeam.imageSource);
     setSelectedTeam(teamId);
   };
   return (

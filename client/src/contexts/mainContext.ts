@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { string } from "three/examples/jsm/nodes/Nodes.js";
+import { MainContextType } from "./mainContextType";
 
-const MainContext = createContext({
+const MainContext = createContext<MainContextType>({
   intro: true,
   setIntro: () => {},
 

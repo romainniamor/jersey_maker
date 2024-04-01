@@ -1,4 +1,6 @@
-export const SOCCER_TEAMS = [
+import { teamType } from "../types/types";
+
+export const SOCCER_TEAMS: teamType[] = [
   {
     id: "1",
     name: "ac milan",

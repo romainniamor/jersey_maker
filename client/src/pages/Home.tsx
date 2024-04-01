@@ -11,9 +11,7 @@ import {
 import { useContext } from "react";
 import MainContext from "../contexts/mainContext";
 
-type Props = {};
-
-function Home({}: Props) {
+function Home() {
   const { intro, setIntro } = useContext(MainContext);
   return (
     <AnimatePresence>

@@ -1,7 +1,5 @@
-export const deepClone = (array) => {
-  return JSON.parse(JSON.stringify(array));
-};
+import { teamType } from "../types/types";
 
-export const findInArray = (array, id) => {
+export const findInArray = (array: teamType[], id: string) => {
   return array.find((itemInArray) => itemInArray.id === id);
 };
