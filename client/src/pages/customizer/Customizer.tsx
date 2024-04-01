@@ -26,19 +26,16 @@ export default function Customizer() {
 
   //comportements
   const returnToHome = async () => {
-    await setCurrentTabSelected(null);
+    await setCurrentTabSelected("");
     setIntro(true);
   };
 
   const selectTab = (tabselected: string) => {
-    if (tabselected === currentTabSelected) return setCurrentTabSelected(null);
+    if (tabselected === currentTabSelected) return setCurrentTabSelected("");
     setCurrentTabSelected(tabselected);
   };
 
-  const editTabs = currentTabSelected
-    ? getEditTabsConfig(currentTabSelected)
-    : null;
-
+  const editTabs = getEditTabsConfig(currentTabSelected);
   return (
     <AnimatePresence>
       {!intro && (

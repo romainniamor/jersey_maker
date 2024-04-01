@@ -1,6 +1,6 @@
 const transition = { type: "spring", duration: 0.5 };
 
-export const slideAnimation = (direction) => {
+export const slideAnimation = (direction: string) => {
   return {
     initial: {
       x: direction === "left" ? -100 : direction === "right" ? 100 : 0,

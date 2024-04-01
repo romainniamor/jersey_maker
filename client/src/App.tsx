@@ -12,7 +12,7 @@ function App() {
   const [isFullDecal, setIsFullDecal] = useState(false);
   const [logoDecal, setLogoDecal] = useState("/meiwa.png");
   const [fullDecal, setFullDecal] = useState("/meiwa.png");
-  const [currentTabSelected, setCurrentTabSelected] = useState(null);
+  const [currentTabSelected, setCurrentTabSelected] = useState("");
 
   const mainContextValue = {
     intro,

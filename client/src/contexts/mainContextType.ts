@@ -8,7 +8,7 @@ export type MainContextType = {
   setColor: Dispatch<SetStateAction<string>>;
 
   currentTabSelected: string | null;
-  setCurrentTabSelected: Dispatch<SetStateAction<string | null>>;
+  setCurrentTabSelected: Dispatch<SetStateAction<string>>;
 
   isLogoTexture: boolean;
   setIsLogoTexture: Dispatch<SetStateAction<boolean>>;
