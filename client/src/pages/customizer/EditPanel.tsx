@@ -8,7 +8,7 @@ import LogoPicker from "../../components/pickers/LogoPicker";
 export default function EditPanel() {
   const { currentTabSelected } = useContext(MainContext);
   return (
-    <div className="absolute left-full ml-3 p-2 glassmorphism rounded-lg">
+    <div className="absolute left-full ml-3 p-2 glassmorphism rounded-lg ">
       {currentTabSelected === "color" && <ColorPicker />}
       {currentTabSelected === "ai" && <AiPicker />}
       {currentTabSelected === "logo" && <LogoPicker />}

@@ -50,8 +50,8 @@ export const SOCCER_TEAMS = [
   },
   {
     id: "14",
-    name: "dynamo-zagreb",
-    imageSource: "./soccer-teams/dynamo-zagreb.png",
+    name: "dinamo-zagreb",
+    imageSource: "./soccer-teams/dinamo-zagreb.png",
   },
   {
     id: "15",
@@ -139,8 +139,8 @@ export const SOCCER_TEAMS = [
   { id: "41", name: "sporting", imageSource: "./soccer-teams/sporting.png" },
   {
     id: "47",
-    name: "zenit-saint-petersburg",
-    imageSource: "./soccer-teams/zenit-saint-petersburg.png",
+    name: "zenit-st-petersburg",
+    imageSource: "./soccer-teams/zenit-st-petersburg.png",
   },
   {
     id: "48",
