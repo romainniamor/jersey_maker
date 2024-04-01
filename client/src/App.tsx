@@ -10,8 +10,8 @@ function App() {
   const [isLogoTexture, setIsLogoTexture] = useState(true);
   const [isFullTexture, setIsFullTexture] = useState(false);
   const [isFullDecal, setIsFullDecal] = useState(false);
-  const [logoDecal, setLogoDecal] = useState("/teams/meiwa.png");
-  const [fullDecal, setFullDecal] = useState("/teams/1.png");
+  const [logoDecal, setLogoDecal] = useState("/meiwa.png");
+  const [fullDecal, setFullDecal] = useState("/meiwa.png");
   const [currentTabSelected, setCurrentTabSelected] = useState(null);
 
   const mainContextValue = {
