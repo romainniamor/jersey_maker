@@ -26,6 +26,9 @@ const MainContext = createContext<MainContextType>({
 
   fullDecal: string,
   setFullDecal: () => {},
+
+  prompt: string,
+  setPrompt: () => {},
 });
 
 export default MainContext;

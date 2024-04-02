@@ -22,6 +22,18 @@ export const slideAnimation = (direction: string) => {
   };
 };
 
+export const popAnimation = {
+  initial: {
+    scale: 0,
+  },
+  animate: {
+    scale: 1,
+  },
+  exit: {
+    scale: 0,
+  },
+};
+
 export const fadeAnimation = {
   initial: {
     opacity: 0,
