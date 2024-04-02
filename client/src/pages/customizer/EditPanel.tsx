@@ -4,20 +4,18 @@ import MainContext from "../../contexts/mainContext";
 import AiPicker from "../../components/pickers/AiPicker";
 import BrandPicker from "../../components/pickers/BrandPicker";
 import LogoPicker from "../../components/pickers/LogoPicker";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { popAnimation } from "../../animations/motion";
 
 export default function EditPanel() {
   const { currentTabSelected } = useContext(MainContext);
   return (
-    <motion.div
-      {...popAnimation}
-      className="absolute left-full ml-3  rounded-lg "
-    >
+    <div className="absolute left-full ml-3  rounded-lg ">
       {currentTabSelected === "color" && <ColorPicker />}
-      {currentTabSelected === "ai" && <AiPicker />}
+
       {currentTabSelected === "logo" && <LogoPicker />}
       {currentTabSelected === "brand" && <BrandPicker />}
-    </motion.div>
+      {currentTabSelected === "ai" && <AiPicker />}
+    </div>
   );
 }

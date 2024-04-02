@@ -14,6 +14,7 @@ function App() {
   const [fullDecal, setFullDecal] = useState("/meiwa.png");
   const [currentTabSelected, setCurrentTabSelected] = useState("");
   const [prompt, setPrompt] = useState("");
+  const [generatingImage, setGeneratingImage] = useState(false);
 
   const mainContextValue = {
     intro,
@@ -34,6 +35,8 @@ function App() {
     setCurrentTabSelected,
     prompt,
     setPrompt,
+    generatingImage,
+    setGeneratingImage,
   };
 
   return (

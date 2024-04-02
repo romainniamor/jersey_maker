@@ -1,6 +1,6 @@
 type CustomButtonProps = {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
   color: string;
 };
 

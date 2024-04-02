@@ -16,16 +16,6 @@ export default function Customizer() {
   const { intro, setIntro, currentTabSelected, setCurrentTabSelected } =
     useContext(MainContext);
 
-  // const [file, setFile] = useState("");
-  // const [prompt, setPrompt] = useState("");
-  // const [generatingImg, setGeneratingImg] = useState(false);
-
-  // const [activeEditorTab, setActiveEditorTab] = useState("");
-  // const [activeFilterTab, setActiveFilterTab] = useState({
-  //   logoShirt: true,
-  //   stylishShirt: false,
-  // });
-
   //comportements
   const returnToHome = async () => {
     await setCurrentTabSelected("");
@@ -36,6 +26,7 @@ export default function Customizer() {
     if (tabselected === currentTabSelected) return setCurrentTabSelected("");
     setCurrentTabSelected(tabselected);
   };
+  console.log("currentTabSelected", currentTabSelected);
 
   const editTabs = getEditTabsConfig(currentTabSelected);
   return (
@@ -75,17 +66,7 @@ export default function Customizer() {
           <motion.div
             className="absolute z-10 bottom-2 right-0 left-0 w-full flex justify-center items-center  gap-4 "
             {...slideAnimation("up")}
-          >
-            {/* {filterTabs.map((tab) => (
-              <Tab
-                key={tab.name}
-                tab={tab}
-                onClick={() => alert(`click de tab ${tab.name}`)}
-                isActiveTab={false}
-                isFilterTab={true}
-              />
-            ))} */}
-          </motion.div>
+          ></motion.div>
         </>
       )}
       <Toast />

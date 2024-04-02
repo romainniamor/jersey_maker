@@ -5,21 +5,41 @@ import { displayToast } from "../../utils/toast";
 
 export default function AiPicker() {
   //state
-  const { prompt, setPrompt } = useContext(MainContext);
+  const { prompt, setPrompt, setGeneratingImage } = useContext(MainContext);
 
   //comportements
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!prompt.length) {
       displayToast("Please enter a description before submitting.");
       return;
     }
-    alert(`Submit du prompt: ${prompt}`);
+    try {
+      console.log("prompt", prompt);
+      setGeneratingImage(true);
+      const response = await fetch(
+        "http://localhost:3000/api/jersey-maker/dalle",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ prompt }),
+        }
+      );
+      console.log("response", response);
+      const data = await response.json();
+      console.log("data", data);
+    } catch (error) {
+      console.error(error);
+      displayToast("An error occurred. Please try again later.");
+    } finally {
+      setGeneratingImage(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    console.log(e.target.value);
     setPrompt(e.target.value);
   };
   return (

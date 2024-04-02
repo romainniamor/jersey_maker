@@ -24,4 +24,10 @@ export type MainContextType = {
 
   fullDecal: string;
   setFullDecal: Dispatch<SetStateAction<string>>;
+
+  prompt: string;
+  setPrompt: Dispatch<SetStateAction<string>>;
+
+  generatingImage: boolean;
+  setGeneratingImage: Dispatch<SetStateAction<boolean>>;
 };

@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 const port = process.env.PORT;
 
-app.use("/api/create-jersey", routes);
+app.use("/api/jersey-maker", routes);
 
 app.get("/", (req, res) => {
   res.status(200).json("API is running...");

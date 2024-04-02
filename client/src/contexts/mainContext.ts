@@ -29,6 +29,9 @@ const MainContext = createContext<MainContextType>({
 
   prompt: string,
   setPrompt: () => {},
+
+  generatingImage: false,
+  setGeneratingImage: () => {},
 });
 
 export default MainContext;
