@@ -22,19 +22,21 @@ function Home() {
         >
           <motion.div className="" {...headContainerAnimation}>
             <motion.div className="" {...headTextAnimation}>
-              <h1 className="text-8xl mb-9 ">Let's create</h1>
+              <h1 className="text-9xl mb-9 ">Let's create!</h1>
             </motion.div>
             <motion.div className="" {...headContentAnimation}>
-              <p className="text-gray-800 min-w-2/5 max-w-lg mb-4">
-                Fan of Captain Tsubasa!? Create your own shirt style for your
-                favorite team. <strong>Unleash your imagination</strong> and
-                define your own style.
+              <p className="text-gray-800 min-w-2/5 max-w-lg mb-6 text-xl">
+                Make your own style for your favorite soccer team. <br /> Add
+                logo, brand and texture. Use IA and{" "}
+                <strong className="text-yellow-400">
+                  Unleash your imagination.
+                </strong>
               </p>
 
               <CustomButton
                 label="Get Started"
                 onClick={() => setIntro(false)}
-                color={"bg-gradient-to-r from-sky-400 to-pink-400"}
+                color={"bg-gradient-to-r from-yellow-100 to-yellow-400"}
               />
             </motion.div>
           </motion.div>
