@@ -1,6 +1,7 @@
 import CustomButton from "../reusableUi/CustomButton";
 import { useContext } from "react";
 import MainContext from "../../contexts/mainContext";
+import { displayToast } from "../../utils/toast";
 
 export default function AiPicker() {
   //state
@@ -11,7 +12,7 @@ export default function AiPicker() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!prompt.length) {
-      alert("Please enter a prompt");
+      displayToast("Please enter a description before submitting.");
       return;
     }
     alert(`Submit du prompt: ${prompt}`);

@@ -4,6 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import { slideAnimation, fadeAnimation } from "../../animations/motion";
 import { useContext } from "react";
 import MainContext from "../../contexts/mainContext";
+import Toast from "../../components/reusableUi/Toast";
+import "react-toastify/dist/ReactToastify.css";
 
 import Tab from "../../components/reusableUi/Tab";
 import { getEditTabsConfig } from "../../config/getEditTabsConfig";
@@ -86,6 +88,7 @@ export default function Customizer() {
           </motion.div>
         </>
       )}
+      <Toast />
     </AnimatePresence>
   );
 }
