@@ -66,7 +66,7 @@ export default function Customizer() {
             <CustomButton
               label="Go Back"
               onClick={returnToHome}
-              color={"bg-gradient-to-r from-yellow-400 to-yellow-100"}
+              color={"bg-gradient-to-l from-slate-100 to-slate-300"}
             />
           </motion.div>
 

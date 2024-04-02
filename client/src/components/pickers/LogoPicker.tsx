@@ -17,7 +17,7 @@ export default function LogoPicker() {
     setSelectedTeam(teamId);
   };
   return (
-    <div className="h-80 overflow-y-scroll w-64 p-4 pr-6 bg-slate-100 rounded-md grid grid-cols-4 gap-5">
+    <div className="h-80 overflow-y-scroll w-64 p-4 pr-6 pb-8 rounded-md grid grid-cols-4 gap-5 glassmorphism">
       {SOCCER_TEAMS.map((team) => (
         <div
           key={team.id}

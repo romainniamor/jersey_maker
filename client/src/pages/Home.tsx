@@ -28,15 +28,13 @@ function Home() {
               <p className="text-gray-800 min-w-2/5 max-w-lg mb-6 text-xl">
                 Make your own style for your favorite soccer team. <br /> Add
                 logo, brand and texture. Use IA and{" "}
-                <strong className="text-yellow-400">
-                  Unleash your imagination.
-                </strong>
+                <strong>Unleash your imagination.</strong>
               </p>
 
               <CustomButton
                 label="Get Started"
                 onClick={() => setIntro(false)}
-                color={"bg-gradient-to-r from-yellow-100 to-yellow-400"}
+                color={"bg-gradient-to-r from-slate-100 to-slate-300"}
               />
             </motion.div>
           </motion.div>
