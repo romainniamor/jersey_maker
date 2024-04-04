@@ -28,9 +28,11 @@ export const popAnimation = {
   },
   animate: {
     scale: 1,
+    transition: { ...transition, delay: 0.3 },
   },
   exit: {
     scale: 0,
+    transition: { ...transition, delay: 0, duration: 0.3 },
   },
 };
 

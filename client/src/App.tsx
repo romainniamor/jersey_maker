@@ -8,7 +8,7 @@ function App() {
   const [intro, setIntro] = useState(true);
   const [color, setColor] = useState("#2e088f");
   const [isLogoTexture, setIsLogoTexture] = useState(true);
-  const [isFullTexture, setIsFullTexture] = useState(false);
+  const [isFullTexture, setIsFullTexture] = useState(true);
   const [isFullDecal, setIsFullDecal] = useState(false);
   const [logoDecal, setLogoDecal] = useState("/meiwa.png");
   const [fullDecal, setFullDecal] = useState("/meiwa.png");

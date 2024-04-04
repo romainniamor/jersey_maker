@@ -5,7 +5,14 @@ import { displayToast } from "../../utils/toast";
 
 export default function AiPicker() {
   //state
-  const { prompt, setPrompt, setGeneratingImage } = useContext(MainContext);
+  const {
+    prompt,
+    setPrompt,
+    generatingImage,
+    setGeneratingImage,
+    setFullDecal,
+    fullDecal,
+  } = useContext(MainContext);
 
   //comportements
 
@@ -30,7 +37,13 @@ export default function AiPicker() {
       );
       console.log("response", response);
       const data = await response.json();
-      console.log("data", data);
+      console.log("data", data.image);
+
+      displayToast("Image generated successfully");
+      console.log("data.image", data.image);
+      console.log("donnée image recupérée et applique a setFullDecal");
+      setFullDecal(data.image);
+      setPrompt("");
     } catch (error) {
       console.error(error);
       displayToast("An error occurred. Please try again later.");
@@ -48,10 +61,18 @@ export default function AiPicker() {
         <textarea
           name="prompt"
           placeholder="Enter your prompt here..."
-          className=" w-full text-xs h-56 resize-none bg-transparent border border-gray-300  p-2 focus:outline-none focus:ring-1 focus:ring-slate-100"
+          className="relative w-full text-xs h-56 resize-none bg-transparent border border-gray-300  p-2 focus:outline-none focus:ring-1 focus:ring-slate-100"
           value={prompt}
           onChange={handleChange}
-        ></textarea>
+        />
+        {generatingImage && (
+          <h1 className="absolute text-3xl">Generating IMG</h1>
+        )}
+        <img
+          className="h-64 w-64 border-s-orange-500"
+          src={fullDecal}
+          alt="Generated Image"
+        />
 
         <CustomButton
           label="Ask AI"

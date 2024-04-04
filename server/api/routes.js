@@ -23,9 +23,11 @@ router.post("/dalle", async (req, res) => {
       size: "1024x1024",
       response_format: "b64_json",
     });
+    console.log("response:", response);
 
-    const image = response.data[0].b64_json;
-    res.status(200).json({ image: image });
+    const image = "data:image/png;base64," + response.data[0].b64_json;
+
+    res.status(200).json({ image });
   } catch (error) {
     console.log("error /dalle post => ", error);
     res.status(500).json({ message: `Error post dalle => ${error}` });

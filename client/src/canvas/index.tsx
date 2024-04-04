@@ -9,11 +9,11 @@ export default function CanvasModel() {
     <Canvas
       shadows
       camera={{ position: [0, 0, 0], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, antialias: true }}
       className="w-full max-w-full h-full transition-all duration-500 ease-in-out"
     >
-      <ambientLight intensity={0.3} />
-      <Environment preset="city" />
+      <ambientLight intensity={0.6} />
+      <Environment preset="sunset" />
       <CameraRig>
         <BackShadow />
         <Center>

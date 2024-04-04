@@ -4,14 +4,15 @@ import MainContext from "../contexts/mainContext";
 
 export default function BackShadow() {
   const { color } = useContext(MainContext);
+
   return (
     <AccumulativeShadows
       temporal
       frames={100}
       color={color}
       toneMapped={true}
-      opacity={0.9}
-      scale={5}
+      opacity={0.7}
+      scale={4}
       rotation={[Math.PI / 2, 0, 0]}
       position={[0, 0, -0.17]}
     >

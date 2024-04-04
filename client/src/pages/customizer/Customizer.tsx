@@ -26,7 +26,6 @@ export default function Customizer() {
     if (tabselected === currentTabSelected) return setCurrentTabSelected("");
     setCurrentTabSelected(tabselected);
   };
-  console.log("currentTabSelected", currentTabSelected);
 
   const editTabs = getEditTabsConfig(currentTabSelected);
   return (
