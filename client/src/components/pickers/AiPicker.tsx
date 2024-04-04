@@ -2,6 +2,7 @@ import CustomButton from "../reusableUi/CustomButton";
 import { useContext } from "react";
 import MainContext from "../../contexts/mainContext";
 import { displayToast } from "../../utils/toast";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function AiPicker() {
   //state
@@ -56,28 +57,35 @@ export default function AiPicker() {
     setPrompt(e.target.value);
   };
   return (
-    <div className=" w-64 p-4 glassmorphism  rounded-md">
+    <div className=" relative w-64 p-4 glassmorphism  rounded-md">
       <form onSubmit={handleSubmit} className=" flex flex-col gap-4">
         <textarea
           name="prompt"
           placeholder="Enter your prompt here..."
-          className="relative w-full text-xs h-56 resize-none bg-transparent border border-gray-300  p-2 focus:outline-none focus:ring-1 focus:ring-slate-100"
+          className=" w-full text-xs h-56 resize-none bg-transparent border border-gray-300  p-2 focus:outline-none focus:ring-1 focus:ring-slate-100"
           value={prompt}
           onChange={handleChange}
         />
-        {generatingImage && (
-          <h1 className="absolute text-3xl">Generating IMG</h1>
-        )}
-        <img
-          className="h-64 w-64 border-s-orange-500"
-          src={fullDecal}
-          alt="Generated Image"
-        />
 
-        <CustomButton
-          label="Ask AI"
-          color={"bg-gradient-to-r from-slate-100 to-slate-300  relative"}
-        />
+        <div className="flex justify-center items-center">
+          {generatingImage ? (
+            <RotatingLines
+              visible={true}
+              height="50"
+              width="50"
+              strokeColor="#64748b"
+              strokeWidth="5"
+              animationDuration="0.75"
+              ariaLabel="rotating-lines-loading"
+              style={{}}
+            />
+          ) : (
+            <CustomButton
+              label="Ask AI"
+              color={"bg-gradient-to-r from-slate-100 to-slate-300  relative"}
+            />
+          )}
+        </div>
       </form>
     </div>
   );
