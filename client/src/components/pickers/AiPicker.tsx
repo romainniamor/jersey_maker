@@ -12,7 +12,7 @@ export default function AiPicker() {
     generatingImage,
     setGeneratingImage,
     setFullDecal,
-    fullDecal,
+    setIsFullTexture,
   } = useContext(MainContext);
 
   //comportements
@@ -43,6 +43,7 @@ export default function AiPicker() {
       displayToast("Image generated successfully");
       console.log("data.image", data.image);
       console.log("donnée image recupérée et applique a setFullDecal");
+      setIsFullTexture(true);
       setFullDecal(data.image);
       setPrompt("");
     } catch (error) {

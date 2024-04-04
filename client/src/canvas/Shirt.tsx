@@ -35,9 +35,9 @@ export default function Shirt() {
         )}
         {isLogoTexture && (
           <Decal
-            position={[0.01, 0.1, 0.15]}
+            position={[0.095, 0.1, 0.11]}
             rotation={[0, 0, 0]}
-            scale={0.15}
+            scale={0.08}
             map={logoTexture}
             depthTest={false}
             depthWrite={true}
